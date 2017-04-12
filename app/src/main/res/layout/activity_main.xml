@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.djx.autosizetextview.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    tools:context="com.djx.autosizetextview.MainActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Hello World!" app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <CheckBox
+        android:id="@+id/preset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="使用预置"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加大" />
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/plus"
+            android:text="缩小" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/auto_textView"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="#2f00"
+            android:layout_gravity="center"
+            android:text="Hello Test"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="80sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeText="uniform" />
+
+        <TextView
+            android:id="@+id/auto_textView_preset_sizes"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="#20f0"
+            android:layout_gravity="center"
+            android:text="Hello Test"
+            android:autoSizeText="uniform"
+            android:autoSizePresetSizes="@array/preset_sizes"/>
+
+    </FrameLayout>
+</LinearLayout>
