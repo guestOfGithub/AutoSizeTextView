@@ -47,7 +47,7 @@
             android:autoSizeMinTextSize="20sp"
             android:autoSizeMaxTextSize="80sp"
             android:autoSizeStepGranularity="2sp"
-            android:autoSizeText="uniform" />
+            android:autoSizeTextType="uniform" />
 
         <TextView
             android:id="@+id/auto_textView_preset_sizes"
@@ -56,7 +56,7 @@
             android:background="#20f0"
             android:layout_gravity="center"
             android:text="Hello Test"
-            android:autoSizeText="uniform"
+            android:autoSizeTextType="uniform"
             android:autoSizePresetSizes="@array/preset_sizes"/>
 
     </FrameLayout>
